@@ -1,13 +1,14 @@
 import os
 import requests
 
-def checkin(user_label, auth, cookie):
-    url = "https://glados.rocks/api/user/checkin"
+def checkin(user_label,  cookie):
+    url = "https://glados.space/api/user/checkin"
     headers = {
         "Accept": "application/json, text/plain, */*",
         "Content-Type": "application/json;charset=UTF-8",
-        "Authorization": auth,
         "Cookie": cookie,
+        "Origin": "https://glados.space",
+        "Referer": "https://glados.space/console/checkin",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0.0.0 Safari/537.36"
     }
     data = {
@@ -24,4 +25,4 @@ def checkin(user_label, auth, cookie):
     print("")
 
 
-checkin("User (Me)", os.environ.get("GLADOS_AUTH"), os.environ.get("GLADOS_COOKIE"))
+checkin("User (Me)", os.environ.get("GLADOS_COOKIE"))
