@@ -23,5 +23,4 @@ jobs:
       - name: Run checkin script
         run: python checkin.py
         env:
-          GLADOS_AUTH: ${{ secrets.GLADOS_AUTH }}
           GLADOS_COOKIE: ${{ secrets.GLADOS_COOKIE }}
